@@ -1,0 +1,95 @@
+html, body {
+  margin: 0px;
+  height: 100%;
+}
+
+#sidebar {
+	grid-area: sidebar;
+	overflow-y: scroll;
+}
+
+#content {
+	grid-area: content;
+}
+
+.header {
+	grid-area: header;
+	font-family: Helvetica, sans-serif
+}
+
+.footer{
+  grid-area: footer;
+}
+
+.sideBarItem{
+	max-height: 50px;
+	max-width: 50px;
+	padding:5px;
+}
+
+.sideBarItem img{
+	max-height: 50px;
+	max-Width:50px;
+}
+
+.colourPalette{
+	grid-area: colourP;
+	display:flex;
+	flex-direction:grid;
+	flex-flow: wrap;
+}
+
+.options{
+	grid-area: options;
+	padding: 15px;
+}
+
+.colourSwatches{
+	box-sizing: border-box;
+	width: 40px;
+	height: 40px;
+	max-height: 40px;
+	max-width: 40px;
+	margin: 5px;
+}
+
+
+	.wrapper {
+		display: grid;
+		height: 100%;
+		grid-template-columns: 70px 230px  minmax(500px, 1fr);
+		grid-template-rows: 35px minmax(500px, 1fr) 160px;
+		grid-template-areas:
+               "header header header"
+				"sidebar content content"
+                "colourP colourP options";
+		background-color: #fff;
+		color: #444;
+	}
+.box {
+  background-color: #444;
+  color: #fff;
+  font-size: 150%;
+}
+
+.header {
+  background-color: #999;
+}
+
+.colourPickerImage {
+  height: 40px; /* Match the height of colour swatches */
+  width: 40px; /* Match the width of colour swatches */
+  margin: 5px; /* Match the margin of colour swatches */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  background-image: url('assets/picker-icon.png'); /* Set the background image */
+  background-size: cover; /* Ensure the image covers the whole element */
+  background-position: center; /* Center the background image */
+}
+
+.colourPickerImage input[type="color"] {
+  opacity: 0; /* Make the input invisible */
+  width: 100%; /* Match the width of the parent */
+  height: 100%; /* Match the height of the parent */
+  top: 0;
+  left: 0;
+}
